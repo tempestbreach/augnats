@@ -9,3 +9,7 @@ type Handler interface {
 }
 
 type HandlerFunc func(*nats.Msg)
+
+func(f HandlerFunc) HandleMsg(msg *nats.Msg) {
+    f(msg)
+}
